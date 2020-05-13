@@ -14,26 +14,27 @@ class Settings: ObservableObject {
     private let defaults = UserDefaults.standard
     private let defaultsKey = "DefaultBrowser"
 
-    @Published var browsers = [Browser(name: "Firefox", key: .Firefox),
-                           Browser(name: "Chrome", key: .Chrome),
-                           Browser(name: "Vivaldi", key: .Vivaldi),
-                           Browser(name: "Brave", key: .Brave)]
+    @Published var browsers = [Browser(name: "Firefox", id: .Firefox),
+                           Browser(name: "Chrome", id: .Chrome),
+                           Browser(name: "Vivaldi", id: .Vivaldi),
+                           Browser(name: "Brave", id: .Brave),
+                           Browser(name: "Opera", id: .Opera)]
 
     @Published var defaultBrowser: Browser {
         didSet {
-            defaults.set(defaultBrowser.key.rawValue, forKey: defaultsKey)
+            defaults.set(defaultBrowser.id.rawValue, forKey: defaultsKey)
         }
     }
 
     init() {
         guard let existingDefault = defaults.object(forKey: defaultsKey) as? String,
-        let existingKey = Browser.Keys(rawValue: existingDefault)  else {
+        let existingId = Browser.ID(rawValue: existingDefault)  else {
             self.defaultBrowser = Browser()
 
             return
         }
 
-        self.defaultBrowser = Browser(name: existingDefault.capitalizingFirstLetter(), key: existingKey)
+        self.defaultBrowser = Browser(name: existingDefault.capitalizingFirstLetter(), id: existingId)
     }
 }
 

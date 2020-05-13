@@ -15,11 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let settings = Settings()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-
-        // Create the SwiftUI view that provides the window contents.
+        
+        let defaultBrowser = settings.defaultBrowser
+        if let url = connectionOptions.urlContexts.first?.url.absoluteString {
+            DeepLinkHandler.handle(urlString: url, for: defaultBrowser.id)
+        }
+        
         let contentView = ContentView().environmentObject(settings)
 
         // Use a UIHostingController as window root view controller.
@@ -33,19 +34,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         let defaultBrowser = settings.defaultBrowser
-
-        guard let oldURLString = URLContexts.first?.url.absoluteString,
-            let schema = oldURLString.components(separatedBy: ":").first else {
+        
+        guard let urlString = URLContexts.first?.url.absoluteString  else {
             return
         }
-
-
-        let newURLString = oldURLString.replacingOccurrences(of: schema, with: defaultBrowser.key.rawValue)
-        guard let newURL = URL(string: newURLString) else {
-            return
-        }
-
-        UIApplication.shared.open(newURL)
+        
+        DeepLinkHandler.handle(urlString: urlString, for: defaultBrowser.id)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

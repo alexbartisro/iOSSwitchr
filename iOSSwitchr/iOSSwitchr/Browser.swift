@@ -10,25 +10,26 @@ import Foundation
 
 class Browser {
     var name = ""
-    var key = Keys.none
+    var id = ID.none
 
-    enum Keys: String {
+    enum ID: String {
         case none = "none"
         case Firefox = "firefox"
         case Chrome = "chrome"
         case Vivaldi = "vivaldi"
         case Brave = "brave"
+        case Opera = "opera"
     }
 
-    init(name: String = "none", key: Keys = Keys.none) {
+    init(name: String = "none", id: ID = ID.none) {
         self.name = name
-        self.key = key
+        self.id = id
     }
 }
 
 extension Browser: ObservableObject, Hashable {
     public static func == (lhs: Browser, rhs: Browser) -> Bool {
-        return lhs.key == rhs.key && lhs.name == rhs.name
+        return lhs.id == rhs.id && lhs.name == rhs.name
     }
 
     func hash(into hasher: inout Hasher) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA10E481246C7C6D0064FCFE /* DeepLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E480246C7C6D0064FCFE /* DeepLinkHandler.swift */; };
 		FE5EABB9246C00770076D826 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5EABB8246C00770076D826 /* Browser.swift */; };
 		FE5EABBB246C07750076D826 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5EABBA246C07750076D826 /* Settings.swift */; };
 		FE5EABBD246C20800076D826 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5EABBC246C20800076D826 /* Player.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA10E480246C7C6D0064FCFE /* DeepLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkHandler.swift; sourceTree = "<group>"; };
 		FE5EABB8246C00770076D826 /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
 		FE5EABBA246C07750076D826 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FE5EABBC246C20800076D826 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				FE5EABB8246C00770076D826 /* Browser.swift */,
 				FE5EABBA246C07750076D826 /* Settings.swift */,
 				FE5EABBC246C20800076D826 /* Player.swift */,
+				FA10E480246C7C6D0064FCFE /* DeepLinkHandler.swift */,
 			);
 			path = iOSSwitchr;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				TargetAttributes = {
 					FEC9D869246BDF17008A84F7 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1150;
 					};
 					FEC9D87F246BDF19008A84F7 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -286,6 +290,7 @@
 				FEC9D872246BDF17008A84F7 /* ContentView.swift in Sources */,
 				FE5EABBD246C20800076D826 /* Player.swift in Sources */,
 				FE5EABBB246C07750076D826 /* Settings.swift in Sources */,
+				FA10E481246C7C6D0064FCFE /* DeepLinkHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,10 +455,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSSwitchr/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JEW4ZQXUL9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOSSwitchr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,10 +479,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSSwitchr/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JEW4ZQXUL9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOSSwitchr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
