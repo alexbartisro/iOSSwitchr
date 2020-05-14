@@ -25,11 +25,28 @@ class DeepLinkHandler {
                 newURL = unwrappedURL
             }
             
+        case .Brave:
+                   if let unwrappedURL = getBraveURL(from: urlString) {
+                       newURL = unwrappedURL
+                   }
+                   
         default:
             return
         }
        
         UIApplication.shared.open(newURL)
+    }
+    
+    /*
+    *   Brave's URL scheme is the same as Firefox's URL scheme.
+    */
+    private static func getBraveURL(from oldURLString: String) -> URL? {
+        let newString =  "brave://open-url?url=" + oldURLString
+        guard let url = URL(string: newString) else {
+            return nil
+        }
+        
+        return url
     }
     
     private static func getFirefoxURL(from oldURLString: String) -> URL? {
@@ -53,3 +70,4 @@ class DeepLinkHandler {
         return url
     }
 }
+
