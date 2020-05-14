@@ -18,4 +18,6 @@ ___
 3. Need to do some propper organising of the classes, as everything is just thrown in there at this point
 ___
 
-### If you like this project, please consider staring it. Thanks!
+### If you like this project, please consider starring it. Thanks!
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=J3Z3SVTJ72GJL&currency_code=EUR&source=url)
