@@ -24,12 +24,16 @@ class DeepLinkHandler {
             if let unwrappedURL = getChromeURL(from: urlString) {
                 newURL = unwrappedURL
             }
-            
+
         case .Brave:
                    if let unwrappedURL = getBraveURL(from: urlString) {
                        newURL = unwrappedURL
                    }
-                   
+    
+        case .Edge:
+            if let unwrappedURL = getEdgeURL(from: urlString) {
+                newURL = unwrappedURL
+            }
         default:
             return
         }
@@ -49,6 +53,7 @@ class DeepLinkHandler {
         return url
     }
     
+    
     private static func getFirefoxURL(from oldURLString: String) -> URL? {
         let newString =  "firefox://open-url?url=" + oldURLString
         guard let url = URL(string: newString) else {
@@ -57,6 +62,7 @@ class DeepLinkHandler {
         
         return url
     }
+    
     
     private static func getChromeURL(from oldURLString: String) -> URL? {
         let existingScheme = oldURLString.components(separatedBy: ":").first ?? "https"
@@ -69,5 +75,22 @@ class DeepLinkHandler {
         
         return url
     }
+      
+    //Edge URL scheme - and handling to endure that https: or http: in the URL
+    //(often found with mail clients and safe link handling) dont get replaced
+    
+    private static func getEdgeURL(from oldURLString: String) -> URL? {
+        let existingScheme = oldURLString.components(separatedBy: ":").first ?? "https"
+        let stringIndex = oldURLString.index(oldURLString.startIndex, offsetBy: existingScheme.count)
+        
+        let slugString = oldURLString.suffix(from: stringIndex)
+        let edgeScheme = existingScheme == "http" ? "microsoft-edge-http" : "microsoft-edge-https"
+        let newURLString = edgeScheme + slugString
+        
+        guard let url = URL(string: newURLString) else {
+            return nil
+        }
+        
+        return url
+    }
 }
-
