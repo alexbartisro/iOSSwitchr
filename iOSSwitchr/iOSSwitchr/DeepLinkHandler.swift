@@ -31,10 +31,14 @@ class DeepLinkHandler {
             }
             
         case .Brave:
-            if let unwrappedURL = getEdgeURL(from: urlString) {
+            if let unwrappedURL = getBraveURL(from: urlString) {
                 newURL = unwrappedURL
             }
-            
+
+        case .Opera:
+            if let unwrappedURL = getOperaURL(from: urlString) {
+                newURL = unwrappedURL
+            }
             
         default:
             return
@@ -79,6 +83,18 @@ class DeepLinkHandler {
     private static func getBraveURL(from oldURLString: String) -> URL? {
         let newString =  "brave://open-url?url=" + oldURLString
         guard let url = URL(string: newString) else {
+            return nil
+        }
+        
+        return url
+    }
+    
+    private static func getOperaURL(from oldURLString: String) -> URL? {
+        let existingScheme = oldURLString.components(separatedBy: ":").first ?? "https"
+        let chromeScheme = existingScheme == "http" ? "touch-http" : "touch-https"
+        let newURLString = oldURLString.replacingOccurrences(of: existingScheme, with: chromeScheme)
+        
+        guard let url = URL(string: newURLString) else {
             return nil
         }
         
