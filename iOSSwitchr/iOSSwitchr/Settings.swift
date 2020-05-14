@@ -18,7 +18,8 @@ class Settings: ObservableObject {
                            Browser(name: "Chrome", id: .Chrome),
                            Browser(name: "Vivaldi", id: .Vivaldi),
                            Browser(name: "Brave", id: .Brave),
-                           Browser(name: "Opera", id: .Opera)]
+                           Browser(name: "Opera", id: .Opera),
+                           Browser(name: "Edge", id: .Edge)]
 
     @Published var defaultBrowser: Browser {
         didSet {

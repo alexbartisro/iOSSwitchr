@@ -19,6 +19,7 @@ class Browser {
         case Vivaldi = "vivaldi"
         case Brave = "brave"
         case Opera = "opera"
+        case Edge = "edge"
     }
 
     init(name: String = "none", id: ID = ID.none) {
