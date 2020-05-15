@@ -15,10 +15,11 @@ class Settings: ObservableObject {
     private let defaultsKey = "DefaultBrowser"
 
     @Published var browsers = [Browser(name: "Firefox", id: .Firefox),
-                           Browser(name: "Chrome", id: .Chrome),
-                           Browser(name: "Vivaldi", id: .Vivaldi),
+                           Browser(name: "Google Chrome", id: .Chrome),
+                           //Browser(name: "Vivaldi", id: .Vivaldi), --removed until is supported and tested
                            Browser(name: "Brave", id: .Brave),
-                           Browser(name: "Opera", id: .Opera)]
+                           Browser(name: "Opera Touch", id: .Opera),
+                           Browser(name: "Microsoft Edge", id: .Edge)]
 
     @Published var defaultBrowser: Browser {
         didSet {
