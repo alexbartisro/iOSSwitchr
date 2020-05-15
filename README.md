@@ -11,11 +11,10 @@ To install, you either deploy it by yourself to your device from Xcode OR you ca
 ___
 
 ### Known issues:
-1. Vivaldi and Opera don't work yet.
 
-2. Some URLs (I saw the behavior only in the Messages app and in Notes) are not handled as URLs by the OS, so you need to long press on them and than select `Open Link`.
+1. Some URLs (I saw the behavior only in the Messages app and in Notes) are not handled as URLs by the OS, so you need to long press on them and than select `Open Link`.
 
-3. Need to do some propper organising of the classes, as everything is just thrown in there at this point.
+2. The process is a bit slow. Will try to optimise this.
 ___
 
 ### If you like this project, please consider starring it. Thanks!
