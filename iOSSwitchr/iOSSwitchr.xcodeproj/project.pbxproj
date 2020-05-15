@@ -86,6 +86,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA4569ED246F293900B30510 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FA4569F1246F297B00B30510 /* Views */,
+				FEC9D878246BDF19008A84F7 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FA4569EE246F294B00B30510 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FE5EABC6246C3C6D0076D826 /* Assets.xcassets */,
+				FE5EABC0246C24DA0076D826 /* tutorial.mov */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FA4569EF246F295500B30510 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				FEC9D86D246BDF17008A84F7 /* AppDelegate.swift */,
+				FEC9D86F246BDF17008A84F7 /* SceneDelegate.swift */,
+				FEC9D87B246BDF19008A84F7 /* Info.plist */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		FA4569F0246F296A00B30510 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE5EABB8246C00770076D826 /* Browser.swift */,
+				FE5EABBA246C07750076D826 /* Settings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA4569F1246F297B00B30510 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE5EABBC246C20800076D826 /* Player.swift */,
+				FEC9D871246BDF17008A84F7 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FA4569F2246F299200B30510 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				FA10E480246C7C6D0064FCFE /* DeepLinkHandler.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
 		FEC9D861246BDF17008A84F7 = {
 			isa = PBXGroup;
 			children = (
@@ -109,18 +163,12 @@
 		FEC9D86C246BDF17008A84F7 /* iOSSwitchr */ = {
 			isa = PBXGroup;
 			children = (
-				FE5EABC6246C3C6D0076D826 /* Assets.xcassets */,
-				FE5EABC0246C24DA0076D826 /* tutorial.mov */,
-				FEC9D86D246BDF17008A84F7 /* AppDelegate.swift */,
-				FEC9D86F246BDF17008A84F7 /* SceneDelegate.swift */,
-				FEC9D871246BDF17008A84F7 /* ContentView.swift */,
-				FEC9D878246BDF19008A84F7 /* LaunchScreen.storyboard */,
-				FEC9D87B246BDF19008A84F7 /* Info.plist */,
+				FA4569F2246F299200B30510 /* Business */,
+				FA4569F0246F296A00B30510 /* Models */,
+				FA4569EF246F295500B30510 /* Misc */,
+				FA4569EE246F294B00B30510 /* Assets */,
+				FA4569ED246F293900B30510 /* UI */,
 				FEC9D875246BDF19008A84F7 /* Preview Content */,
-				FE5EABB8246C00770076D826 /* Browser.swift */,
-				FE5EABBA246C07750076D826 /* Settings.swift */,
-				FE5EABBC246C20800076D826 /* Player.swift */,
-				FA10E480246C7C6D0064FCFE /* DeepLinkHandler.swift */,
 			);
 			path = iOSSwitchr;
 			sourceTree = "<group>";
@@ -456,19 +504,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSSwitchr/Preview Content\"";
-				DEVELOPMENT_TEAM = 5G38TVB775;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOSSwitchr/Info.plist;
+				INFOPLIST_FILE = iOSSwitchr/Misc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ro.bartis.iOSSwitchr.jeremymolinaFork;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ro.bartis.iOSSwitchr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -481,19 +529,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSSwitchr/Preview Content\"";
-				DEVELOPMENT_TEAM = 5G38TVB775;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOSSwitchr/Info.plist;
+				INFOPLIST_FILE = iOSSwitchr/Misc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ro.bartis.iOSSwitchr.jeremymolinaFork;
+				MARKETING_VERSION = 1.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ro.bartis.iOSSwitchr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
