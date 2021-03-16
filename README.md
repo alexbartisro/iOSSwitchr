@@ -1,3 +1,6 @@
+# THIS PROJECT IS NOW OBSOLETE AND WILL NOT BE MAINTAINED.
+
+
 # iOSSwitchr
 ### A simple tool to change the iOS Default Browser
 
